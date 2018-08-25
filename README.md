@@ -11,6 +11,13 @@ npm install
 PORT=3000 npm start
 ```
 
+### Docker
+
+```bash
+docker pull cigolpl/lighthouse-api
+docker run -it -p 3000:3000 cigolpl/lighthouse-api
+```
+
 ## Making requests
 
 ```bash

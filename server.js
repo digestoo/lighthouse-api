@@ -6,7 +6,7 @@ const Promise = require('bluebird');
 const app = express()
 
 const opts = {
-  logLevel: 'info',
+  //logLevel: 'info',
   chromeFlags: [
     '--show-paint-rects',
     '--headless',
