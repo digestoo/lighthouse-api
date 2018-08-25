@@ -1,0 +1,26 @@
+{
+  "name": "lighthouse-api",
+  "version": "1.0.0",
+  "description": "Lighthouse API (dockerized)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digestoo/lighthouse-api.git"
+  },
+  "author": "Mateusz Rzepa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/digestoo/lighthouse-api/issues"
+  },
+  "homepage": "https://github.com/digestoo/lighthouse-api#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "chrome-launcher": "^0.10.2",
+    "express": "^4.16.3",
+    "lighthouse": "^3.0.3"
+  }
+}
