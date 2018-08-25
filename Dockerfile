@@ -5,10 +5,18 @@ RUN apk update && apk upgrade && \
     echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
     echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories && \
     apk add --no-cache \
-      chromium@edge \
-      nss@edge
+      zlib-dev \
+      xvfb \
+      xorg-server \
+      dbus \
+      ttf-freefont \
+      chromium \
+      nss \
+      ca-certificates \
+      dumb-init
 
 RUN apk add --no-cache bash
+RUN apk add --no-cache curl
 
 # Help prevent zombie chrome processes
 ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 /usr/local/bin/dumb-init
