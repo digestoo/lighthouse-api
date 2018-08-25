@@ -1,19 +1,15 @@
 FROM node:9-alpine
 
 # Installs latest Chromium (63) package.
-RUN apk update && apk upgrade && \
-    echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
-    echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories && \
-    apk add --no-cache \
-      zlib-dev \
-      xvfb \
-      xorg-server \
-      dbus \
-      ttf-freefont \
-      chromium \
-      nss \
-      ca-certificates \
-      dumb-init
+RUN apk update && \
+  apk upgrade && \
+  echo @3.8 https://ftp.acc.umu.se/mirror/alpinelinux.org/v3.8/community >> /etc/apk/repositories && \
+  echo @3.8 https://ftp.acc.umu.se/mirror/alpinelinux.org/v3.8/main >> /etc/apk/repositories && \
+  apk add --no-cache \
+    freetype@3.8 \
+    harfbuzz@3.8 \
+    chromium@3.8 \
+    nss@3.8
 
 RUN apk add --no-cache bash
 RUN apk add --no-cache curl
