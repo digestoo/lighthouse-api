@@ -6,7 +6,7 @@ const Promise = require('bluebird');
 const app = express()
 
 const opts = {
-  //logLevel: 'info',
+  logLevel: 'info',
   chromeFlags: [
     '--show-paint-rects',
     '--headless',
@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({
 
 chromeLauncher.launch({chromeFlags: opts.chromeFlags})
 .then(chrome => {
+  console.log(chrome);
   opts.port = chrome.port;
   console.log('Browser loaded');
 })
