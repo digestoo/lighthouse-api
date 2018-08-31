@@ -15,7 +15,7 @@ PORT=3000 npm start
 
 ```bash
 docker pull cigolpl/lighthouse-api
-docker run -it -p 3000:3000 cigolpl/lighthouse-api
+docker run -it --privileged -p 3000:3000 --cap-add=SYS_ADMIN cigolpl/lighthouse-api
 ```
 
 ## Making requests
