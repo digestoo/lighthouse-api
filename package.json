@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Lighthouse API (dockerized)",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "mocha test/*",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,9 @@
     "chrome-launcher": "^0.10.2",
     "express": "^4.16.3",
     "lighthouse": "^3.0.3"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "sinon": "^6.2.0"
   }
 }

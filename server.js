@@ -24,6 +24,8 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+const lib = require('./lib');
+
 chromeLauncher.launch({chromeFlags: opts.chromeFlags})
 .then(chrome => {
   console.log(chrome);
@@ -39,10 +41,11 @@ app.get('/status', async (req, res) => {
 })
 
 app.all('/:domain', async (req, res) => {
-  return lighthouse('http://' + req.params.domain, opts)
-  .then(results => {
-    return res.json(results.lhr);
-  });
+
+  var data = await lib.domain(req.params.domain, {
+    simple: req.query.simple
+  }, opts);
+  return res.json(data);
 })
 
 module.exports = app;
